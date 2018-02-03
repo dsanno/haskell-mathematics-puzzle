@@ -1,0 +1,31 @@
+name:                puzzle
+version:             0.1.0.0
+#synopsis:
+#description:
+homepage:            https://github.com/dsanno/haskell-mathematics-puzzlepuzzle#readme
+license:             MIT
+author:              Daiki Sanno
+maintainer:          daiki.sanno@gmail.com
+copyright:           2018 © Daiki Sanno
+category:            Web
+extra-source-files:
+- README.md
+
+dependencies:
+  - base >= 4.7 && < 5
+
+executables:
+  puzzle:
+    source-dirs:
+      - src
+      - src/lib
+      - src/01-palindrome-number
+    main:             Main.hs
+
+tests:
+  puzzle-test:
+    source-dirs:      test
+    main:             Driver2.hs
+    dependencies:
+      - tasty
+      - tasty-discover
