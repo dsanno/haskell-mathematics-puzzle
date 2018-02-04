@@ -20,6 +20,8 @@ executables:
       - src
       - src/lib
       - src/01-palindrome-number
+      - src/02-calculator
+      - src/03-flip-card
     main:             Main.hs
 
 tests:
