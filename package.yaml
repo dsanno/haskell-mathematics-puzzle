@@ -22,6 +22,7 @@ executables:
       - src/01-palindrome-number
       - src/02-calculator
       - src/03-flip-card
+      - src/04-cut-stick
     main:             Main.hs
 
 tests:
