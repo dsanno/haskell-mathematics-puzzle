@@ -4,6 +4,7 @@ import qualified PalindromeNumber
 import qualified Calculator
 import qualified Flip
 import qualified CutStick
+import qualified MoneyExchange
 
 main :: IO ()
 main = do
@@ -15,3 +16,5 @@ main = do
   print Flip.solve
   putStrLn "04. cut sticks"
   print CutStick.solve
+  putStrLn "05. money exchange"
+  print MoneyExchange.solve

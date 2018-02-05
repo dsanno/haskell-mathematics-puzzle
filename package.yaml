@@ -23,6 +23,7 @@ executables:
       - src/02-calculator
       - src/03-flip-card
       - src/04-cut-stick
+      - src/05-money-exchange
     main:             Main.hs
 
 tests:
