@@ -4,15 +4,6 @@ module CutStick
 
 import qualified Data.List as List
 
-{-
-count :: Int -> Int -> Int
-count len n =
-  let f (i, count) = (i + 1, count + min n (2 ^ i))
-      x = List.find ((>= len - 1) . snd) $ iterate f (0, 0)
-  in case x of
-       Just (i, _) -> i
-       _           -> -1
--}
 
 cut :: Int -> Int -> Int
 cut n i = min n (2 ^ i)
