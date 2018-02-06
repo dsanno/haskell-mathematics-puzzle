@@ -5,6 +5,7 @@ import qualified Calculator
 import qualified Flip
 import qualified CutStick
 import qualified MoneyExchange
+import qualified Collatz
 
 main :: IO ()
 main = do
@@ -18,3 +19,5 @@ main = do
   print CutStick.solve
   putStrLn "05. money exchange"
   print MoneyExchange.solve
+  putStrLn "06. collatz"
+  print Collatz.solve
