@@ -6,6 +6,7 @@ import qualified Flip
 import qualified CutStick
 import qualified MoneyExchange
 import qualified Collatz
+import qualified BinaryDate
 
 main :: IO ()
 main = do
@@ -21,3 +22,5 @@ main = do
   print MoneyExchange.solve
   putStrLn "06. collatz"
   print Collatz.solve
+  putStrLn "07. binary date"
+  print BinaryDate.solve
