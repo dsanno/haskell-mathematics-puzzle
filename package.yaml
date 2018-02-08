@@ -28,6 +28,7 @@ executables:
       - src/05-money-exchange
       - src/06-collatz
       - src/07-binary-date
+      - src/08-robot-cleaner
     main:             Main.hs
 
 tests:
