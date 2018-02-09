@@ -29,6 +29,7 @@ executables:
       - src/06-collatz
       - src/07-binary-date
       - src/08-robot-cleaner
+      - src/09-unbalance-men-wemen
     main:             Main.hs
 
 tests:

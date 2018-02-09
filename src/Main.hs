@@ -8,6 +8,7 @@ import qualified MoneyExchange
 import qualified Collatz
 import qualified BinaryDate
 import qualified RobotCleaner
+import qualified MenWemen
 
 main :: IO ()
 main = do
@@ -27,3 +28,5 @@ main = do
   print BinaryDate.solve
   putStrLn "08. robot cleaner"
   print RobotCleaner.solve
+  putStrLn "09. unbalance men wemen"
+  print MenWemen.solve
