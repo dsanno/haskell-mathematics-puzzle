@@ -9,6 +9,7 @@ import qualified Collatz
 import qualified BinaryDate
 import qualified RobotCleaner
 import qualified MenWemen
+import qualified Roulette
 
 main :: IO ()
 main = do
@@ -30,3 +31,5 @@ main = do
   print RobotCleaner.solve
   putStrLn "09. unbalance men wemen"
   print MenWemen.solve
+  putStrLn "10. roulette max value"
+  print Roulette.solve

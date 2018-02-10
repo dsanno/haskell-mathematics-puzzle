@@ -30,6 +30,7 @@ executables:
       - src/07-binary-date
       - src/08-robot-cleaner
       - src/09-unbalance-men-wemen
+      - src/10-roulette
     main:             Main.hs
 
 tests:
