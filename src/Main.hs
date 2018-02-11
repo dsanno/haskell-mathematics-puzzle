@@ -11,6 +11,7 @@ import qualified RobotCleaner
 import qualified MenWemen
 import qualified Roulette
 import qualified Fibonacci
+import qualified SquareRoot
 
 main :: IO ()
 main = do
@@ -36,3 +37,5 @@ main = do
   print Roulette.solve
   putStrLn "11. fibonacci"
   print Fibonacci.solve
+  putStrLn "12. sqaure root"
+  print SquareRoot.solve

@@ -32,6 +32,7 @@ executables:
       - src/09-unbalance-men-wemen
       - src/10-roulette
       - src/11-fibonacci
+      - src/12-square-root
     main:             Main.hs
 
 tests:
