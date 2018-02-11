@@ -33,6 +33,7 @@ executables:
       - src/10-roulette
       - src/11-fibonacci
       - src/12-square-root
+      - src/13-verbal-arithmetic
     main:             Main.hs
 
 tests:

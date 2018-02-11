@@ -12,6 +12,7 @@ import qualified MenWemen
 import qualified Roulette
 import qualified Fibonacci
 import qualified SquareRoot
+import qualified VerbalArithmetic
 
 main :: IO ()
 main = do
@@ -39,3 +40,5 @@ main = do
   print Fibonacci.solve
   putStrLn "12. sqaure root"
   print SquareRoot.solve
+  putStrLn "13. verbal arithmetic"
+  print VerbalArithmetic.solve
