@@ -10,6 +10,7 @@ import qualified BinaryDate
 import qualified RobotCleaner
 import qualified MenWemen
 import qualified Roulette
+import qualified Fibonacci
 
 main :: IO ()
 main = do
@@ -33,3 +34,5 @@ main = do
   print MenWemen.solve
   putStrLn "10. roulette max value"
   print Roulette.solve
+  putStrLn "11. fibonacci"
+  print Fibonacci.solve
