@@ -34,6 +34,7 @@ executables:
       - src/11-fibonacci
       - src/12-square-root
       - src/13-verbal-arithmetic
+      - src/14-country-name-chain
     main:             Main.hs
 
 tests:

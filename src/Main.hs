@@ -13,6 +13,7 @@ import qualified Roulette
 import qualified Fibonacci
 import qualified SquareRoot
 import qualified VerbalArithmetic
+import qualified NameChain
 
 main :: IO ()
 main = do
@@ -42,3 +43,5 @@ main = do
   print SquareRoot.solve
   putStrLn "13. verbal arithmetic"
   print VerbalArithmetic.solve
+  putStrLn "14. country name chain"
+  print NameChain.solve
