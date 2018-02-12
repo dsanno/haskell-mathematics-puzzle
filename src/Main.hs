@@ -14,6 +14,7 @@ import qualified Fibonacci
 import qualified SquareRoot
 import qualified VerbalArithmetic
 import qualified NameChain
+import qualified Stairs
 
 main :: IO ()
 main = do
@@ -45,3 +46,5 @@ main = do
   print VerbalArithmetic.solve
   putStrLn "14. country name chain"
   print NameChain.solve
+  putStrLn "15. stairs"
+  print Stairs.solve

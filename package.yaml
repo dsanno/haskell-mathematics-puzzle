@@ -35,6 +35,7 @@ executables:
       - src/12-square-root
       - src/13-verbal-arithmetic
       - src/14-country-name-chain
+      - src/15-stairs
     main:             Main.hs
 
 tests:
