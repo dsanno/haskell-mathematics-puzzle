@@ -26,9 +26,20 @@ allPaths w h = allPaths' (0, 0) (w, h)
 overwrap :: Path -> Path -> Bool
 overwrap xs ys = any (uncurry (==)) $ zip xs ys
 
-countUnoverwrappedPaths :: Int -> Int -> Int
-countUnoverwrappedPaths w h =
-  sum $ map (`countUnoverwrapped` paths) paths
+countPaths :: Int -> Int -> Int -> Int
+countPaths w 1 0 = 2
+countPaths w 1 returnY = 1
+countPaths 1 h returnY
+  | h == returnY = returnY
+  | otherwise = returnY + 2
+countPaths w h 0 = rightPathNum + downPathNum
   where
-    paths = allPaths w h
-    countUnoverwrapped p ps = sum $ map (fromEnum . not . overwrap p) ps
+    rightPathNum = sum $ map (countPaths (w - 1) h) [1..h]
+    downPathNum = sum $ map (countPaths (h - 1) w) [1..w]
+countPaths w h returnY = rightPathNum + downPathNum
+  where
+    rightPathNum = sum $ map (countPaths (w - 1) h) [returnY..h]
+    downPathNum = countPaths w (h - 1) (returnY - 1)
+
+countUnoverwrappedPaths :: Int -> Int -> Int
+countUnoverwrappedPaths w h = countPaths w h 0
