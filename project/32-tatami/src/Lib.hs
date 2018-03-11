@@ -4,8 +4,6 @@ module Lib
     ) where
 
 
-import           Control.Applicative ((<|>))
-import           Control.Monad       (guard)
 import qualified Data.Map.Lazy       as Map
 
 type Point = (Int, Int)
@@ -24,25 +22,26 @@ isCross (x, y) idMap = id1 /= id2 && id1 /= id3 && id2 /= id4 && id3 /= id4
     id3 = Map.lookup (x, y + 1) idMap
     id4 = Map.lookup (x + 1, y + 1) idMap
 
-place :: Int -> Int -> Point -> Point -> IdMap -> Maybe IdMap
+place :: Int -> Int -> Point -> Point -> IdMap -> [IdMap]
 place w h p@(x, y) (dx, dy) idMap
-  | x + dx >= w || y + dy >= h = Nothing
-  | isCross (x + dx, y - 1) newMap = Nothing
-  | otherwise = Just newMap
+  | x + dx >= w || y + dy >= h = []
+  | Map.member (x + dx, y + dy) idMap = []
+  | isCross (x + dx, y - 1) newMap = []
+  | otherwise = [newMap]
   where
     newId = Map.size idMap `div` 2
     newMap = Map.insert (x, y) newId $ Map.insert (x + dx, y + dy) newId idMap
 
-arrange' :: Int -> Int -> Point -> IdMap -> Maybe IdMap
+arrange' :: Int -> Int -> Point -> IdMap -> [IdMap]
 arrange' w h p@(x, y) idMap
   | Map.size idMap == w * h = return idMap
   | Map.member p idMap = arrange' w h (nextPoint w h p) idMap
-  | otherwise = m1 <|> m2
+  | otherwise = m1 ++ m2
       where
         m1 = place w h p (1, 0) idMap >>= arrange' w h (nextPoint w h (x + 1, y))
         m2 = place w h p (0, 1) idMap >>= arrange' w h (nextPoint w h (x, y))
 
-arrange :: Int -> Int -> Maybe (Map.Map (Int, Int) Int)
+arrange :: Int -> Int -> [IdMap]
 arrange w h = arrange' w h (0, 0) Map.empty
 
 isHorizontal :: Point -> IdMap -> Maybe Bool
