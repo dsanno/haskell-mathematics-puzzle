@@ -14,7 +14,7 @@ spec = do
     it "returns bit list" $
       intToBits 4 7 `shouldBe` [1, 1, 1, 0]
 
-  describe "bitsToInt" $ do
+  describe "bitsToInt" $
     it "returns Int value represented by input" $
       bitsToInt [1, 0, 1] `shouldBe` 5
 
