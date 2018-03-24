@@ -1,0 +1,48 @@
+name:                solver
+version:             0.1.0.0
+github:              "dsanno/haskell-mathematics-puzzlepuzzle"
+license:             MIT
+author:              "Daiki Sanno"
+maintainer:          "daiki.sanno@gmail.com"
+copyright:           "2018 © Daiki Sanno"
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on Github at <https://github.com/dsanno/haskell-mathematics-puzzlepuzzle>
+
+dependencies:
+- base >= 4.7 && < 5
+- containers
+- mtl
+
+library:
+  source-dirs: src
+
+executables:
+  solver-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - solver
+
+tests:
+  solver-test:
+    main:                doctest-driver.hs
+    source-dirs:         src
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - solver
+    - doctest
+    - doctest-discover
